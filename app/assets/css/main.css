@@ -1,0 +1,97 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+/*
+ * Colors: docs/colorscheme.md is the source of truth. Update that file first, then this one.
+ * Light theme only.
+ */
+:root {
+  --radius: 0.5rem;
+
+  --background: #ffffff;
+  --foreground: hsl(222.2 84% 4.9%);
+
+  --card: #ffffff;
+  --card-foreground: hsl(222.2 84% 4.9%);
+  --popover: #ffffff;
+  --popover-foreground: hsl(222.2 84% 4.9%);
+
+  --primary: #7a3530;
+  --primary-foreground: #ffffff;
+
+  --secondary: hsl(210 40% 96.1%);
+  --secondary-foreground: hsl(222.2 84% 4.9%);
+
+  --muted: hsl(210 40% 96.1%);
+  /* Darker than the reference app's hsl(215.4 16.3% 46.9%), which is 4.3:1 on `muted` (below AA). */
+  --muted-foreground: hsl(215.3 19.3% 34.5%);
+
+  /* shadcn's `accent` is the neutral hover/selected surface, not a brand color. */
+  --accent: hsl(210 40% 96.1%);
+  --accent-foreground: hsl(222.2 84% 4.9%);
+
+  /* Brand highlight (coral). */
+  --highlight: #e16264;
+  --highlight-foreground: hsl(222.2 84% 4.9%);
+
+  --destructive: #d65453;
+  --destructive-foreground: hsl(222.2 84% 4.9%);
+
+  --warning: #be8936;
+  --warning-foreground: hsl(222.2 84% 4.9%);
+
+  --success: #27d190;
+  --success-foreground: hsl(222.2 84% 4.9%);
+
+  --border: #dddddd;
+  --input: #dddddd;
+  --ring: #7a3530;
+}
+
+@theme inline {
+  --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-highlight: var(--highlight);
+  --color-highlight-foreground: var(--highlight-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-size: 15px;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+  }
+}
